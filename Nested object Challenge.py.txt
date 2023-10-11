@@ -1,0 +1,25 @@
+
+def get_nested_value(obj, key):
+    keys = key.split('/')
+    current = obj
+    for k in keys:
+        if k in current:
+            current = current[k]
+        else:
+            return None
+    return current
+
+# Example usage:
+object1 = {"a": {"b": {"c": "d"}}}
+key1 = "a/b/c"
+
+object2 = {"x": {"y": {"z": "a"}}
+key2 = "x/y/z"
+
+value1 = get_nested_value(object1, key1)
+value2 = get_nested_value(object2, key2)
+
+print("Value 1:", value1)  # Output: "d"
+print("Value 2:", value2)  # Output: "a"
+
+
